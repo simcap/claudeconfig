@@ -13,16 +13,20 @@ fi
 echo "Copy over latest $SETTINGS_NAME file"
 cp $SETTINGS_NAME $CLAUDE_HOME
 
-GLOBAL_SKILLS_DIR="$CLAUDE_HOME/skills"
+copy_dir() {
+    local name="$1"
+    local dest="$CLAUDE_HOME/$name"
+    if [[ -d "$dest" ]]; then
+        echo -e "\nBacking up existing $dest"
+        mv "$dest" "$dest-$(date '+%Y-%m-%d-%H-%M-%S').old"
+    fi
+    echo "Copy $name to $CLAUDE_HOME"
+    cp -R "$name" "$CLAUDE_HOME"
+    
+    if command -v tree &> /dev/null; then
+        tree $dest
+    fi
+}
 
-if [[ -d "$GLOBAL_SKILLS_DIR" ]]; then
-    echo "Backing up existing skills $GLOBAL_SKILLS_DIR"
-    sudo mv $GLOBAL_SKILLS_DIR $GLOBAL_SKILLS_DIR-$(date '+%Y-%m-%d-%H-%M-%S').old
-fi
-
-echo "Copy skills to $CLAUDE_HOME"
-cp -R skills "$CLAUDE_HOME"
-
-if command -v tree; then
-    tree $GLOBAL_SKILLS_DIR
-fi
+copy_dir skills
+copy_dir agents
