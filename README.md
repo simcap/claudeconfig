@@ -25,8 +25,8 @@ Inspiration or partial copy from:
 
 To install or update
 
-1. `git clone git@github.com:claudesettings ~/.claudesettings`
-2. `cd ~/.claudesettings`
+1. `git clone git@github.com:claudesettings`
+2. `cd claudesettings`
 3. `git pull`
 4. `./update.sh` 
 
