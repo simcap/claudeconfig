@@ -1,21 +1,18 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-GLOBAL_SETTINGS_DIR="/etc/claude"
-GLOBAL_SETTINGS_NAME="managed-settings.json"
-GLOBAL_SETTINGS_FILE="$GLOBAL_SETTINGS_DIR/$GLOBAL_SETTINGS_NAME"
+CLAUDE_HOME="$HOME/.claude"
+SETTINGS_NAME="settings.json"
+SETTINGS_FILE="$CLAUDE_HOME/$SETTINGS_NAME"
 
-sudo mkdir -p $GLOBAL_SETTINGS_DIR
-
-if [[ -f "$GLOBAL_SETTINGS_FILE" ]]; then
-    echo "Backing up existing $GLOBAL_SETTINGS_FILE"
-    sudo mv $GLOBAL_SETTINGS_FILE $GLOBAL_SETTINGS_FILE-$(date '+%Y-%m-%d-%H-%M-%S').old
+if [[ -f "$SETTINGS_FILE" ]]; then
+    echo "Backing up existing user settings $SETTINGS_FILE"
+    sudo mv $SETTINGS_FILE $SETTINGS_FILE-$(date '+%Y-%m-%d-%H-%M-%S').old
 fi
 
-echo "Copy over latest $GLOBAL_SETTINGS_NAME file"
-sudo cp $GLOBAL_SETTINGS_NAME $GLOBAL_SETTINGS_DIR
+echo "Copy over latest $SETTINGS_NAME file"
+cp $SETTINGS_NAME $CLAUDE_HOME
 
-CLAUDE_HOME="$HOME/.claude"
 GLOBAL_SKILLS_DIR="$CLAUDE_HOME/skills"
 
 if [[ -d "$GLOBAL_SKILLS_DIR" ]]; then

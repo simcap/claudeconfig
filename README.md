@@ -4,7 +4,7 @@ This repo capture basic settings files and skills for a local Claude Code instan
 
 ## Global settings
 
-For all users use `managed-settings.json` in `/etc/claude-code/`.
+For all users use a `managed-settings.json` in `/etc/claude-code/`.
 
 ## User settings
 
