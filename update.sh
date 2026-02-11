@@ -7,7 +7,7 @@ SETTINGS_FILE="$CLAUDE_HOME/$SETTINGS_NAME"
 
 if [[ -f "$SETTINGS_FILE" ]]; then
     echo "Backing up existing user settings $SETTINGS_FILE"
-    sudo mv $SETTINGS_FILE $SETTINGS_FILE-$(date '+%Y-%m-%d-%H-%M-%S').old
+    mv $SETTINGS_FILE $SETTINGS_FILE-$(date '+%Y-%m-%d-%H-%M-%S').old
 fi
 
 echo "Copy over latest $SETTINGS_NAME file"
