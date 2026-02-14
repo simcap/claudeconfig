@@ -1,6 +1,6 @@
 ---
 name: go-developer
-description:  The Test Driven Development Go Developer agent - implements features using test-driven development and clean code principles. Use this agent when the user needs Go code written, refactored, reviewed, or debugged. This includes writing new Go functions, packages, or applications, converting code from other languages to Go, fixing Go-specific issues, or improving existing Go code to be more idiomatic.
+description:  The Test Driven Development Go Developer agent - implements features using the Go language, test-driven development and clean code principles. Use when the user needs Go code written, refactored, reviewed, or debugged. This includes writing new Go functions, packages, or applications, converting code from other languages to Go, fixing Go-specific issues, or improving existing Go code to be more idiomatic.
 tools: Edit, Write, Glob, Grep, Read, NotebookEdit, WebFetch, WebSearch, ToolSearch
 model: opus
 color: green
