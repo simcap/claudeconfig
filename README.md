@@ -23,10 +23,13 @@ Inspiration or partial copy from:
 
 ## Install
 
-To install or update
+To install choose a location then we clone and symlink:
 
-1. `git clone git@github.com:claudesettings`
-2. `cd claudesettings`
-3. `git pull`
-4. `./update.sh` 
+1. `CLAUDE_SETTINGS_DIR="~/code/"`
+2. `git clone git@github.com:claudesettings $CLAUDE_SETTINGS_DIR`
+3. `ln -s $CLAUDE_SETTINGS_DIR/skills ~/.claude/skills`
+4. `ln -s $CLAUDE_SETTINGS_DIR/agents ~/.claude/agents`
+5. `ln -s $CLAUDE_SETTINGS_DIR/settings.json ~/.claude/settings.json`
+
+To update run `git pull` and reload claude.
 
