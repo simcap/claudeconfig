@@ -9,7 +9,9 @@ The user provides frontend requirements: a component, page, application, or inte
 
 ## Resources
 
-For CSS modern details, see [references/css.md](reference/css.md)
+For modern CSS patterns and usages, see [references/css.md](reference/css.md)
+
+For concrete CSS modern examples (good vs. bad) see [examples/modern-css.md](examples/modern-css.md)
 
 ## Design Thinking
 
